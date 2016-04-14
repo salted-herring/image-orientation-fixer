@@ -1,0 +1,6 @@
+---
+Name: 'imageorientationfixer'
+---
+Image:
+  extensions:
+    - ImageOrientationFixer
