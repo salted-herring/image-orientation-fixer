@@ -1,8 +1,5 @@
 <?php
-//Debugger::inspect(extension_loaded('imagick')?'yes':'no');
 class ImageOrientationFixer extends DataExtension {
-	//if (extension_loaded('gd') && function_exists('gd_info')) {
-	//if(extension_loaded('imagick')) {
 		
 	public function updateCMSFields( FieldList $fields ) {
 		$path = $this->owner->getFullPath();
