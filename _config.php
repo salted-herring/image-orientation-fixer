@@ -1,3 +1,2 @@
 <?php
-
-define('IMAGEORIENTATIONFIXER_DIR',basename(dirname(__FILE__)));
+define('IMAGEORIENTATIONFIXER_DIR', basename(dirname(__FILE__)));
