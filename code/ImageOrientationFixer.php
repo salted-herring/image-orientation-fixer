@@ -1,16 +1,9 @@
 <?php
 class ImageOrientationFixer extends DataExtension {
-		
-	public function updateCMSFields( FieldList $fields ) {
-		$path = $this->owner->getFullPath();
-		$orientation = $this->get_orientation($path);
-	}
 	
 	public function onBeforeWrite() {
-		
 		$path = $this->owner->getFullPath();
 		if ($orientation = $this->get_orientation($path)) {
-			
 			if (extension_loaded('imagick')) {
 				$this->rotate_imagick($path, $orientation);
 			} elseif (extension_loaded('gd')) {

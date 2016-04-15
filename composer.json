@@ -1,0 +1,18 @@
+{
+	"name": "salted-herring/image-orientation-fixer",
+	"description": "Automactially rotate the image that you upload to SilverStripe CMS, based on its orientation value stored in the exif data.",
+	"type": "silverstripe-module",
+	"homepage": "https://github.com/salted-herring/image-orientation-fixer",
+	"license": "MIT",
+	"keywords": ["silverstripe", "image", "image rotation", "orientation", "image orientation"],
+	"authors": [
+		{
+			"name": "Salted Herring",
+			"homepage": "http://saltedherring.com"
+		}
+	],
+	"require": {
+		"silverstripe/framework": "~3.3",
+		"silverstripe/cms": "~3.3"
+	}
+}
