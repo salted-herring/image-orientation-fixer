@@ -28,7 +28,7 @@ class ImageOrientationFixer extends DataExtension {
 		$imagick = new Imagick($imagePath);
 		$imagick->setImageOrientation(imagick::ORIENTATION_TOPLEFT);
 		$deg = 0;
-		switch($orientation) {
+		switch ($orientation) {
 			case 3:
 				$deg = -180;
 				break;
@@ -61,7 +61,7 @@ class ImageOrientationFixer extends DataExtension {
 				return false;
 		}
 		
-		switch($orientation) {
+		switch ($orientation) {
 			case 3:
 				$image = imagerotate($image, 180, 0);
 				break;
