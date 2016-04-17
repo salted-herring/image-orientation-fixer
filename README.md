@@ -1,8 +1,9 @@
 # Image Orientation Fixer
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/salted-herring/image-orientation-fixer/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/salted-herring/image-orientation-fixer/?branch=master)
 
-## Description
-Have you ever come across the moments like below:
+
+##Have you ever come across the moments like below:
+
 ![problem story](http://www.saltedherring.com/assets/Uploads/image-fixer-storyboard.png)
 
 ## What does this module do?
