@@ -12,7 +12,7 @@ Automactially rotate the image that you upload to SilverStripe CMS, based on its
 ## Install
 The module can be installed via composer:
 ```bash
-composer require salted-herring/silverstripe-standard-permissions
+composer require salted-herring/image-orientation-fixer
 ```
 After composer has downloaded the directory, go to your SilverStripe website, and in browser's addres bar, attache "?flush=all" to the existing URL, and then hit "Enter"
 
