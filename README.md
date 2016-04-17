@@ -7,7 +7,7 @@
 ![problem story](http://www.saltedherring.com/assets/Uploads/image-fixer-storyboard.png)
 
 ## What does this module do?
-Automactially rotate the image that you upload to SilverStripe CMS, based on its orientation value stored in the exif data.
+Automactially correct the image's rotation / orientation that you upload to SilverStripe CMS, based on its orientation value stored in the exif data.
 
 ## Install
 The module can be installed via composer:
