@@ -2,12 +2,15 @@
 class ImageOrientationFixer extends DataExtension {
 	
 	public function onBeforeWrite() {
-		$path = $this->owner->getFullPath();
-		if ($orientation = $this->get_orientation($path)) {
-			if (extension_loaded('imagick')) {
-				$this->rotate_imagick($path, $orientation);
-			} elseif (extension_loaded('gd')) {
-				$this->rotate_gd($path, $orientation);
+		$ext = $this->owner->getExtension();
+		if ($ext == 'jpg') {
+			$path = $this->owner->getFullPath();
+			if ($orientation = $this->get_orientation($path)) {
+				if (extension_loaded('imagick')) {
+					$this->rotate_imagick($path, $orientation);
+				} elseif (extension_loaded('gd')) {
+					$this->rotate_gd($path, $orientation);
+				}
 			}
 		}
 		
