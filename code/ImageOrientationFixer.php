@@ -3,7 +3,7 @@ class ImageOrientationFixer extends DataExtension {
 	
 	public function onBeforeWrite() {
 		$ext = $this->owner->getExtension();
-		if ($ext == 'jpg') {
+		if (strtolower($ext) == 'jpg' || strtolower($ext) == 'jpeg') {
 			$path = $this->owner->getFullPath();
 			if ($orientation = $this->get_orientation($path)) {
 				if (extension_loaded('imagick')) {
@@ -49,21 +49,8 @@ class ImageOrientationFixer extends DataExtension {
 	}
 	
 	private function rotate_gd($path, $orientation) {
-		$imgInfo = getimagesize($path);
-		switch ($imgInfo[2]) {
-			case 1:
-				$image = imagecreatefromgif($path);
-				break;
-			case 2:
-				$image = imagecreatefromjpeg($path);
-				break;
-			case 3:
-				$image = imagecreatefrompng($path);
-				break;
-			default:
-				return false;
-		}
-		
+		$image = imagecreatefromjpeg($path);
+			
 		switch ($orientation) {
 			case 3:
 				$image = imagerotate($image, 180, 0);
@@ -76,23 +63,8 @@ class ImageOrientationFixer extends DataExtension {
 				break;
 		}
 		
-		switch ($imgInfo[2]) {
-			case 1:
-				imagegif($image, $path);
-				break;
-			case 2:
-				imagejpeg($image, $path, 100);
-				break;
-			case 3:
-				imagepng($image, $path);
-				break;
-			default:
-				imagedestroy($image);
-				return false;
-		}
-		
+		imagejpeg($image, $path, 100);
 		imagedestroy($image);
-		
 		return true;
 	}
 }
