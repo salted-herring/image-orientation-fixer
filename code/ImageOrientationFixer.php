@@ -18,6 +18,7 @@ class ImageOrientationFixer extends DataExtension {
 	}
 	
 	private function get_orientation($path) {
+		if (!file_exists($path)) { return false; }
 		$exif_data = exif_read_data($path);
 		$orientation = !empty($exif_data['Orientation']) ? $exif_data['Orientation'] : null;
 		/**
