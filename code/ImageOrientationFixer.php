@@ -19,13 +19,20 @@ class ImageOrientationFixer extends DataExtension {
 	
 	private function get_orientation($path) {
 		if (!file_exists($path)) { return false; }
-		$exif_data = exif_read_data($path);
-		$orientation = !empty($exif_data['Orientation']) ? $exif_data['Orientation'] : null;
-		/**
-		 * this image will help you understand the orientation and the difference between encoded and printed
-		 * http://www.kendawson.ca/wp-content/uploads/orient_flag2.gif
-		 */
-		return $orientation == 1 ? false : $orientation;
+		try {
+		    $exif_data = @exif_read_data($path);
+		    $orientation = !empty($exif_data['Orientation']) ? $exif_data['Orientation'] : null;
+			/**
+			 * this image will help you understand the orientation and the difference between encoded and printed
+			 * http://www.kendawson.ca/wp-content/uploads/orient_flag2.gif
+			 */
+			return $orientation == 1 ? false : $orientation;
+		} catch (Exception $e) {
+		    return false;
+		} finally {
+		    return false;
+		}
+
 	}
 	
 	private function rotate_imagick($imagePath, $orientation) {
