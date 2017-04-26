@@ -29,10 +29,7 @@ class ImageOrientationFixer extends DataExtension {
 			return $orientation == 1 ? false : $orientation;
 		} catch (Exception $e) {
 		    return false;
-		} finally {
-		    return false;
 		}
-
 	}
 	
 	private function rotate_imagick($imagePath, $orientation) {
